@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% include breadcrumbs.html path=page.path title=page.title %}
+
+<div class="posts">
+    {% for post in site.posts %}
+        {% if post.categories contains page.category %}
+            {% include post-min.html %}
+        {% endif %}
+    {% endfor %}
+</div>

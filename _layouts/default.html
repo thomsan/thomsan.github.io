@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} – {% if page.description %}{{
+    page.description }}{% else %}{{ site.description }}{% endif %}</title>
+
+  {% include meta.html %}
+
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/main.css" />
+
+  <noscript>
+    <link rel="stylesheet" href="noscript.css" />
+    <p>This site needs javascript to be enabled</p>
+    <a target="_blank" href="http://www.enable-javascript.com/">How to enable javascript in your browser</a>
+  </noscript>
+  {% if page.homepage or page.call-to-action %}
+  {% else %}
+  <style>
+    #header {
+      height: 0px;
+    }
+  </style>
+  {% endif %}
+
+  <script data-who="💎 Made with naker.io 💎" src="https://d23jutsnau9x47.cloudfront.net/back/v1.0.6/viewer.js"
+    data-option="{|environment|:{|gradient|:|radial|,|sensitivity|:1.7,|colorStart|:[0,0,0,1],|colorEnd|:[10,16,38,1]},|particle|:{|life|:4.2,|power|:0.016,|texture|:|https://res.cloudinary.com/naker-io/image/upload/v1566560053/flare_01.png|,|number|:1080,|colorStart|:[250,255,221,0.65],|colorEnd|:[33,86,171,0.82],|sizeStart|:0.5,|sizeEnd|:0.1,|direction1|:{|x|:100,|y|:0,|z|:100},|direction2|:{|x|:-100,|y|:0,|z|:-100}},|waterMark|:false}"
+    data-container="background"></script>
+</head>
+
+<body class="is-loading">
+
+  <!-- Wrapper -->
+  <div id="wrapper" class="fade-in">
+
+    <div id="background"></div>
+    {% if page.homepage == true %}
+
+    <!-- Intro -->
+    <div id="intro">
+      <img src="{{ site.baseurl }}/images/thomas.jpg" alt="Thomas Ascioglu" width=300px height=300px>
+      <p></p>
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.tagline }}</p>
+
+      <!-- Arrow down -->
+      {% if page.call-to-action %}
+      <ul class="actions">
+        <li><a href="#header" class="button icon solo fas fa-arrow-down scrolly">Continue</a></li>
+      </ul>
+      {% else %}
+      <ul class="actions">
+        <li><a href="#nav" class="button icon solo fas fa-arrow-down scrolly">Continue</a></li>
+      </ul>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Call to action header -->
+    <header id="header">
+      {% if page.call-to-action %}
+      <a href="{{ page.call-to-action-url }}" class="logo">{{ page.call-to-action }}</a>
+      {% endif %}
+    </header>
+
+    <!-- Navigation -->
+    <nav id="nav"></nav>
+
+    <!-- Main -->
+    <div id="main">
+      {{ content }}
+    </div>
+
+    <!-- Copyright -->
+    <div id="copyright">
+      {% include footer.html %}
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/jquery.scrollex.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/jquery.scrolly.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
+  <script src="{{ site.baseurl }}/main.js"></script>
+</body>
+
+</html>

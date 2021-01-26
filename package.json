@@ -1,0 +1,36 @@
+{
+  "name": "thomsan.github.io",
+  "version": "1.0.0",
+  "description": "Personal website of Thomas Ascioglu",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "browser-sync": "^2.26.13",
+    "del": "^6.0.0",
+    "event-stream": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-ruby-sass": "^4.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-size": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomsan/thomsan.github.io.git"
+  },
+  "author": "Thomas Ascioglu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomsan/thomsan.github.io/issues"
+  },
+  "homepage": "https://github.com/thomsan/thomsan.github.io#readme"
+}

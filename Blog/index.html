@@ -1,0 +1,47 @@
+---
+layout: default
+title: Blog
+category: Blog
+tags: [Thomas Ascioglu, Adventures, AI, Augmented Reality, AR, Automation, Bicycle Touring, Computer Vision, DIY, Future, Innovation, Machine Learning, Maker, Mixed Reality, MR, Programming, Robotics, Techno, Technology, Traveling, Virtual Reality, VR, XR]
+---
+
+{% include breadcrumbs.html path=page.path title=page.title %}
+
+<table style="width:100%; text-align: center;">
+  <tr>
+    {% assign categories = site.categories %}
+    {% for category in categories %}
+      {% if category != categories.first %}
+        <td><a href="/Blog/{{ category[0] }}/">{{ category[0] | camelcase }} ({{ category[1].size }})</a></td>
+      {% endif %}
+    {% endfor %}
+  </tr>
+</table>
+
+<!-- This loops through the paginated posts -->
+<div class="posts">
+    {% for post in paginator.posts %}
+        {% include post-min.html %}
+    {% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="align-center">
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">
+        Previous
+      </a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">
+      Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>
+</div>

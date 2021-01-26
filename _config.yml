@@ -1,0 +1,70 @@
+#
+# This file contains configuration flags to customize your site
+#
+
+# Your website URL (e.g. https://thomsan.github.io or https://www.thomasascioglu.com)
+# Used for Sitemap.xml and your RSS feed
+url: https://thomasascioglu.com
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+# Default title if page.title is not set (displayed in page title and meta)
+title: Thomas Ascioglu
+
+# Default description if page.description is not set (displayed in page title and meta)
+description: Blog about Adventures / Deep Tech / DIY / Techno / Traveling / the future and the universe
+
+# Author which wil be mentioned in posts
+author: Thomas Asicoglu
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus_shortname: 'thomas-ascioglu'
+keep_files: [".htaccess"]
+exclude: ["_app",
+          "Gemfile",
+          "Gemfile.lock",
+          "gulpfile.js",
+          "node_modules",
+          "Makefile",
+          "package.json",
+          "package-lock.json",
+          "README.md",
+          "CNAME",
+          "LICENSE",
+          "TEMPLATE-PAGE.md",
+          "TEMPLATE-ELEMENTS.html",
+          "TEMPLATE-POST.md"] # Don't forget that Jekyll automatically
+                              # excludes files with a dot prefix
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+paginate: 8
+paginate_path: "/Blog/page:num/"
+
+permalink: /:title/
+
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :compressed #:expanded You might prefer to minify using :compressed
+
+# Use the following plug-ins
+plugins:
+  - jekyll-paginate # Create a mulitpage blog using the official Jekyll pagination gem
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
