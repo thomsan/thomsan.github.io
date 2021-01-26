@@ -25,16 +25,16 @@
 {% endif %}
 
 <meta property="og:image:type" content="image/jpeg">
-{% if page.image %}e
+{% if page.image %}
     <meta property="og:image" itemprop="image" content="{{site.url}}{{baseurl}}{{page.image}}"/>
     <meta property="twitter:image" itemprop="image" content="{{site.url}}{{baseurl}}{{page.image}}"/>
     <meta property="og:image:secure_url" itemprop="image" content="{{site.url}}{{baseurl}}{{page.image}}"/>
-    <meta name="msapplication-TileImage" content="{{site.url}}{{baseurl}}{{page.image}}">    
+    <meta name="msapplication-TileImage" content="{{site.url}}{{baseurl}}{{page.image}}">
 {% else %}
     <meta property="og:image" itemprop="image" content="{{site.url}}{{baseurl}}/images/logo.jpg?"/>
     <meta property="twitter:image" itemprop="image" content="{{site.url}}{{baseurl}}/images/logo.jpg?"/>
     <meta property="og:image:secure_url" itemprop="image" content="{{site.url}}{{baseurl}}/images/logo.jpg?"/>
-    <meta name="msapplication-TileImage" content="{{site.url}}{{baseurl}}/images/logo.jpg?">  
+    <meta name="msapplication-TileImage" content="{{site.url}}{{baseurl}}/images/logo.jpg?">
 {% endif %}
 
 {% if page.author %}
