@@ -13,6 +13,7 @@
 * Using [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) for generating a sitemap.org compliant sitemap in `/sitemap.xml`
 * Using [jekyll-feed](https://github.com/jekyll/jekyll-feed) for generate an Atom (RSS-like) feed of my posts in `/feed.xml`
 * Sitemap is set [on Google](https://search.google.com/search-console/sitemaps?resource_id=sc-domain%3Athomasascioglu.com&hl=en)
+* [Pixlee for Instagram feed](https://socialfeed.pixlee.com/)
 
 ### Gihtub pages info
 
@@ -33,4 +34,12 @@ Install dev dependencies
 ```
 sudo apt install ruby ruby-dev
 sudo gem install github-pages
+```
+
+## Local Development
+Change source files and add assets as you like.
+The site is generated and updated automatically (jekyll triggers gulp pipeline) while serving via:
+
+```
+make serve
 ```
