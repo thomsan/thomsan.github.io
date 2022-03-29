@@ -32,7 +32,9 @@ Install dev dependencies
 ### Linux
 1. Install Jekyll and plug-ins in one fell swoop.
 ```
-sudo apt install ruby ruby-dev
+sudo apt update
+sudo apt install -y ruby ruby-dev nodejs
+sudo gem install jekyll -v 4.2.0
 sudo gem install github-pages
 ```
 
