@@ -152,7 +152,7 @@ gulp.task('clean:scripts', function (cb) {
 
 // Runs Jekyll build
 gulp.task('build:jekyll', function () {
-    var shellCommand = 'bundle exec jekyll build --config _config.yml,_app/localhost_config.yml';
+    var shellCommand = 'jekyll build --config _config.yml,_app/localhost_config.yml';
     if (config.drafts) { shellCommand += ' --drafts'; };
 
     return gulp.src(paths.jekyllDir)
