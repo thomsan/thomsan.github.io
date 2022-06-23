@@ -12,11 +12,6 @@ url: https://thomasascioglu.com
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
-# Input files for jekyll
-source: "./jekyll_source/"
-# Final static site ouput
-destination: "./_site/"
-
 # Default title if page.title is not set (displayed in page title and meta)
 title: Thomas Ascioglu
 
@@ -50,7 +45,7 @@ exclude: ["_app",
 google_analytics:
 
 paginate: 8
-paginate_path: "./jekyll_source/Blog/page:num/"
+paginate_path: "/Blog/page:num/"
 
 permalink: /:title/
 
