@@ -51,6 +51,7 @@ gulp.task('build:styles', gulp.series('build:styles-main', 'build:styles-map'))
 
 gulp.task('clean:styles', function (cb) {
     del([paths.jekyllDir + 'main.css', paths.siteDir + 'main.css']);
+    del([paths.jekyllDir + 'map.css', paths.siteDir + 'map.css']);
     cb();
 });
 
@@ -83,7 +84,7 @@ gulp.task('build:icons', function() {
         .on('error', gutil.log);
 });
 
-// Coppis assets to appropriate location(s)
+// Copies assets to appropriate location(s)
 gulp.task('build:assets', function () {
     return gulp.src(paths.appAssetFilesGlob)
         .pipe(gulp.dest(paths.jekyllAssetFiles))
@@ -130,7 +131,7 @@ gulp.task('build:scripts-main', function () {
 gulp.task('build:scripts-map', function () {
     return gulp.src(paths.appMapJsFilesGlob)
         .pipe(concat('map.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(paths.jekyllDir))
         .pipe(gulp.dest(paths.siteDir))
         .on('error', gutil.log);
@@ -227,25 +228,25 @@ gulp.task('serve', gulp.series('build', function () {
     // Watch app .js files
     gulp.watch('_app/scripts/**/*.js', gulp.series('build:scripts:watch'));
 
-    // Watch Jekyll posts
-    gulp.watch('_posts/**/*.+(md|markdown|MD)', gulp.series('build:jekyll:watch'));
+    // Watch Jekyll blog posts
+    gulp.watch(paths.jekyllDir + 'Blog/**/*.+(md|markdown|MD)', gulp.series('build:jekyll:watch'));
 
     // Watch Jekyll drafts if --drafts flag was passed
     if (config.drafts) {
-        gulp.watch('_drafts/*.+(md|markdown|MD)', gulp.series('build:jekyll:watch'));
+        gulp.watch(paths.jekyllDir + '_drafts/*.+(md|markdown|MD)', gulp.series('build:jekyll:watch'));
     }
 
     // Watch Jekyll html & md files
-    gulp.watch(['**/*.html', '**/*.md', '!_site/**/*.*'], gulp.series('build:jekyll:watch'));
+    gulp.watch([paths.jekyllDir + '**/*.html', paths.jekyllDir + '**/*.md', '!_site/**/*.*'], gulp.series('build:jekyll:watch'));
 
     // Watch Jekyll RSS feed XML file
-    gulp.watch('feed.xml', gulp.series('build:jekyll:watch'));
+    gulp.watch(paths.jekyllDir + 'feed.xml', gulp.series('build:jekyll:watch'));
 
     // Watch Jekyll data files
-    gulp.watch('_data/**.*+(yml|yaml|csv|json)', gulp.series('build:jekyll:watch'));
+    gulp.watch(paths.jekyllDir + '_data/**.*+(yml|yaml|csv|json)', gulp.series('build:jekyll:watch'));
 
     // Watch Jekyll favicon.ico
-    gulp.watch('favicon.ico', gulp.series('build:jekyll:watch'));
+    gulp.watch(paths.jekyllDir + 'favicon.ico', gulp.series('build:jekyll:watch'));
 
     // Watch gulpfile
     gulp.watch('gulpfile.js', gulp.series('build:jekyll:watch'));

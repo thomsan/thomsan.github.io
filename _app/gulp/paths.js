@@ -1,9 +1,9 @@
 var paths = {};
 
 // Directory locations
-paths.appDir = '_app/';     // The files Gulp will work on
-paths.jekyllDir = './';       // The files Jekyll will work on
-paths.siteDir = '_site/';   // The resulting static site
+paths.appDir = '_app/';                 // The files Gulp will work on
+paths.jekyllDir = 'jekyll_source/';     // The files Jekyll will work on
+paths.siteDir = '_site/';               // The resulting static site
 paths.bowerComponentsDir = paths.appDir + 'bower_components/';
 
 // Folder naming conventions

@@ -20,22 +20,26 @@
 * Github pages only supports [these plugins](https://pages.github.com/versions/)
 * Github pages needs all plugins to be mentioned in _config.yml -> plugins (that's why they are there and in Gemfile)
 
-## Local Development
-Source files are located in the following places:
-* Website (Input for jekyll) base files which don't need gulp optimization (.html, .md, .htaccess, CNAME, ...): [./](./)
-* Everything that needs gulp optimization: [./_app](./_app/)
+## Local Development & adding Content
+The build flow is as follows:
+Gulp is used to optimize the source files in [./_app](./_app/) and output them to [./jekyll_source](./jekyll_source) where Jekyll takes over.
+Together with all other source files present in [./jekyll_source](./jekyll_source) jekyll processes everything and puts the final static website into [./_site](./_site).
 
-Gulp is used to optimize the files in [./_app](./_app/) and output them to [./](./) where Jekyll takes over. Together with the other files jekyll puts everything into [./_site](./_site) which is the final static ouput for the website.
+
+Source files are splitted as follows:
+* [./_app](./_app/): Everything that needs gulp optimization (assets/fonts/images/js scripts/(s)css styles)
+* [./jekyll_source](./jekyll_source/): Website base files (.html, .md, .htaccess, CNAME, ...)
+Hint: To only see source files that can be edited inside [./jekyll_source](./jekyll_source/) (excluding the gulp optimized files from [./_app](./_app/) run `gulp clean`
+
 
 There are two ways to serve the site during development:
-
-Hint: If there are gem file dependency issues, run `sudo bundle clean --force`
 
 1. Serving with gulp detects changes in [./_app](./_app/) but is slow.
 Use this if developing new functionality (changing .js) files.
 ```
 make serve-gulp
 ```
+Hint: If there are gem file dependency issues, run `sudo bundle clean --force`
 
 2. Serving with jekyll does not detect changes in [./_app](./_app/) but is fast.
 Use this for new blog posts.
@@ -44,6 +48,14 @@ Use this for new blog posts.
 make serve
 ```
 Hint: If new assets/fonts/images/scripts/styles/... are added, run `gulp build` before serving.
+
+## Deployment
+Since github pages will run `jekyll build` based on the files present in [./jekyll_source](./jekyll_source/), everything relevant must be inside. Meaning that the gulp output files must be pushed in order for jekyll deployment to take over on github.
+
+To deploy the site run the following command and push everything inside [./jekyll_source](./jekyll_source/):
+```
+gulp build
+```
 
 ### Prerequisites
 * Ruby bundler
