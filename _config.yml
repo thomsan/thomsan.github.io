@@ -13,9 +13,9 @@ url: https://thomasascioglu.com
 baseurl: ""
 
 # Input files for jekyll
-source: "./jekyll_source"
+source: "./jekyll_source/"
 # Final static site ouput
-destination: "./_site"
+destination: "./_site/"
 
 # Default title if page.title is not set (displayed in page title and meta)
 title: Thomas Ascioglu
