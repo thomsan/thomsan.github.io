@@ -20,28 +20,45 @@
 * Github pages only supports [these plugins](https://pages.github.com/versions/)
 * Github pages needs all plugins to be mentioned in _config.yml -> plugins (that's why they are there and in Gemfile)
 
-## Local Development prerequisites
+## Local Development
+Source files are located in the following places:
+* Website (Input for jekyll) base files which don't need gulp optimization (.html, .md, .htaccess, CNAME, ...): [./](./)
+* Everything that needs gulp optimization: [./_app](./_app/)
+
+Gulp is used to optimize the files in [./_app](./_app/) and output them to [./](./) where Jekyll takes over. Together with the other files jekyll puts everything into [./_site](./_site) which is the final static ouput for the website.
+
+There are two ways to serve the site during development:
+
+Hint: If there are gem file dependency issues, run `sudo bundle clean --force`
+
+1. Serving with gulp detects changes in [./_app](./_app/) but is slow.
+Use this if developing new functionality (changing .js) files.
+```
+make serve-gulp
+```
+
+2. Serving with jekyll does not detect changes in [./_app](./_app/) but is fast.
+Use this for new blog posts.
+
+```
+make serve
+```
+Hint: If new assets/fonts/images/scripts/styles/... are added, run `gulp build` before serving.
+
+### Prerequisites
 * Ruby bundler
 * NodeJs
 
-### Windows
+#### Windows
 Install dev dependencies
 * [Ruby bundler](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_install_jekyll_on_windows.html)
 
 
-### Linux
+#### Linux
 1. Install Jekyll and plug-ins in one fell swoop.
 ```
 sudo apt update
 sudo apt install -y ruby ruby-dev nodejs
 sudo gem install jekyll -v 4.2.0
 sudo gem install github-pages
-```
-
-## Local Development
-Change source files and add assets as you like.
-The site is generated and updated automatically (jekyll triggers gulp pipeline) while serving via:
-
-```
-make serve
 ```
