@@ -5,9 +5,12 @@ dependencies-windows:
 	bundle install
 
 dependencies-linux:
-	sudo apt install ruby-bundler nodejs
+	sudo apt install ruby-bundler nodejs gulp
 	sudo bundle install
 	npm install --also=dev
 
 serve:
+	gulp serve
+
+serve-jekyll:
 	jekyll server
