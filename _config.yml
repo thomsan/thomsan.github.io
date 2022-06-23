@@ -50,7 +50,7 @@ exclude: ["_app",
 google_analytics:
 
 paginate: 8
-paginate_path: "/Blog/page:num/"
+paginate_path: "./jekyll_source/Blog/page:num/"
 
 permalink: /:title/
 
