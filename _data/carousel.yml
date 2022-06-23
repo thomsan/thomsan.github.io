@@ -1,20 +1,29 @@
 images:
   - image: /images/portfolio/audi.png
     description: "Audi AG: Consulting and development services for various VR/AR applications during my time at Innoactive."
-  - image: /images/portfolio/boostvc.png
-    description: "Boost VC (Silicon Valley): Part of tripe 6 - VR Showroom"
-    url: https://medium.com/boost-vc/boost-vc-demo-day-introducing-tribe-6-dc9c8649dca1
+  - image: /images/portfolio/tier.jpg
+    description: "TIER Mobility: R&D Lead"
   - image: /images/portfolio/bosch.png
     description: "Bosch: Apprenticeship - Mechatronics Engineer & Intern - Software Development"
   - image: /images/portfolio/innoactive.png
     description: "Innoactive: VR/AR Engineer & Consultant"
   - image: /images/portfolio/media-saturn.jpg
     description: "Media-Saturn-Holding: Consulting and development services for various VR/AR applications during my time at Innoactive."
-  - image: /images/portfolio/tier.jpg
-    description: "TIER Mobility: R&D Lead"
+  - image: /images/portfolio/boostvc.png
+    description: "Boost VC (Silicon Valley): Part of tripe 6 - VR Showroom"
+    url: https://medium.com/boost-vc/boost-vc-demo-day-introducing-tribe-6-dc9c8649dca1
   - image: /images/portfolio/zeiss.png
     description: "Carl-Zeiss AG: Development of VR One SDK and consulting"
     url: https://bitbucket.org/vrone/unity3d/src/master/
+  - image: /images/portfolio/emrsiv.png
+    description: "EMRSIV: Wireless battery powered Immersive Light Music system."
+    url: https://emrsiv.space
+  - image: /images/portfolio/slapse.png
+    description: "Slapse: Computer vision powered app for creating selfie time-lapse videos."
+    url: https://www.slapse.app/
+  - image: /images/portfolio/carbon.svg
+    description: "Support with research project proposal for European Space Agency"
+    url: https://www.carbonmobile.com/
   - image: /images/portfolio/fortiss.png
     description: "fortiss GmbH: Research on human robot interaction"
   - image: /images/portfolio/uw.png
