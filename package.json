@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Personal website of Thomas Ascioglu",
   "main": "gulpfile.js",
-  "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "browser-sync": "^2.27.9",
@@ -16,9 +15,11 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-ruby-sass": "^4.0.0",
     "gulp-run": "^1.7.1",
+    "gulp-sass": "^5.1.0",
     "gulp-size": "^3.0.0",
     "gulp-uglify-es": "^2.0.0",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "sass": "^1.79.3"
   },
   "scripts": {
     "test": "test"

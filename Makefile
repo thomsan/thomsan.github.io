@@ -17,3 +17,6 @@ serve:
 
 serve-jekyll:
 	jekyll server
+
+build:
+	gulp build
