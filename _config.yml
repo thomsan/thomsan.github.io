@@ -23,23 +23,26 @@ author: Thomas Asicoglu
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus_shortname: 'thomas-ascioglu'
+disqus_shortname: "thomas-ascioglu"
 keep_files: [".htaccess"]
-exclude: ["_app",
-          "Gemfile",
-          "Gemfile.lock",
-          "gulpfile.js",
-          "node_modules",
-          "Makefile",
-          "package.json",
-          "package-lock.json",
-          "README.md",
-          "CNAME",
-          "LICENSE",
-          "TEMPLATE-PAGE.md",
-          "TEMPLATE-ELEMENTS.html",
-          "TEMPLATE-POST.md"] # Don't forget that Jekyll automatically
-                              # excludes files with a dot prefix
+exclude:
+  [
+    "_app",
+    "Gemfile",
+    "Gemfile.lock",
+    "gulpfile.js",
+    "node_modules",
+    "Makefile",
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "CNAME",
+    "LICENSE",
+    "TEMPLATE-PAGE.md",
+    "TEMPLATE-ELEMENTS.html",
+    "TEMPLATE-POST.md",
+  ] # Don't forget that Jekyll automatically
+  # excludes files with a dot prefix
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
@@ -57,7 +60,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+    css_class: "highlight"
 
 # Set the Sass partials directory, as we're using @imports
 sass:

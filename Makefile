@@ -5,7 +5,10 @@ dependencies-windows:
 	bundle install
 
 dependencies-linux:
-	sudo apt install ruby-bundler nodejs gulp
+	sudo apt update
+	sudo apt install -y gulp ruby ruby-dev ruby-bundler nodejs
+	sudo gem install jekyll -v 4.2.0
+	sudo gem install github-pages
 	sudo bundle install
 	npm install --also=dev
 
